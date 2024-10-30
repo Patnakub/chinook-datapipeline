@@ -21,7 +21,7 @@ tracksInput = pd.read_csv(inputPath)
 tracksOutput = pd.read_csv(outputPath)
 
 # open test result file
-f = open(testResultPath, "a")
+f = open(testResultPath, "w")
 
 # write datetime
 f.write(datetime.now().strftime("%d-%m-%Y %H:%M:%S") + '\n')
@@ -35,3 +35,7 @@ else:
 
 # close test result file
 f.close()
+
+# COMMAND ----------
+
+
