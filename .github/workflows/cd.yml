@@ -24,6 +24,9 @@ jobs:
       - name: Deploy code to databricks workspace
         run: |
             databricks workspace import "pipeline.py" "/Workspace/Users/sorawit.ther@kmutt.ac.th/DevOps/prod/pipeline" --language python --overwrite
+      - name: Deploy convert-code to databricks workspace
+        run: |
+            databricks workspace import "convert-pipeline.py" "/Workspace/Users/sorawit.ther@kmutt.ac.th/DevOps/prod/convert-pipeline" --language python --overwrite
       - name: Run production job
         run: |
             databricks jobs run-now --job-id 178265972505330
