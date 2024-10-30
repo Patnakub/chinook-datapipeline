@@ -27,6 +27,12 @@ jobs:
       - name: Deploy test to databricks workspace
         run: |
             databricks workspace import "test.py" "/Workspace/Users/sorawit.ther@kmutt.ac.th/DevOps/test/test" --language python --overwrite
+      - name: Deploy convert-pipeline to databricks workspace
+        run: |
+            databricks workspace import "convert-pipeline.py" "/Workspace/Users/sorawit.ther@kmutt.ac.th/DevOps/test/convert-pipeline" --language python --overwrite
+      - name: Deploy convert-test to databricks workspace
+        run: |
+            databricks workspace import "convert-test.py" "/Workspace/Users/sorawit.ther@kmutt.ac.th/DevOps/test/convert-test" --language python --overwrite
       - name: Run test job
         run: |
             databricks jobs run-now --job-id 674528031901633
